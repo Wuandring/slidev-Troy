@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.slidev/
+.work-animation/
+*.zip
+*.pptx
+slides-exported.pdf
+slides-exported.pptx

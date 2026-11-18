@@ -1,0 +1,14 @@
+{
+  "name": "slidev-troy",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev --open",
+    "build": "slidev build",
+    "export": "slidev export"
+  },
+  "devDependencies": {
+    "@slidev/cli": "^51.1.2",
+    "@slidev/theme-default": "latest"
+  }
+}
