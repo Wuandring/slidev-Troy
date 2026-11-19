@@ -12,7 +12,7 @@ const s = computed(() => props.step || 0)
 const base = import.meta.env.BASE_URL
 
 // Slide 1 (intro): s=0 hero, s=1 CI + peeking horse
-// Slide 2 (siege): s=0 day-night pass, s=1 tired guard, s=2 takeaway
+// Slide 2 (siege): s=0 day-night pass, s=1 tired guard
 // Slide 6 (fall):  s=0 horse arrives, s=1 scan + 5 features, s=2 gate opens & horse enters, s=3 night + hatch + soldiers jump & grow, s=4 question
 // Slide 12 (oracle): s=0 closed horse, s=1 X-ray cutaway + magnifying glass zoom on 3 soldiers, s=2 Clue 2
 // Slide 21 (closing): s=0 gate + question, s=1 Thank you

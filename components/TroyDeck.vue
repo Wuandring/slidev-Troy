@@ -209,29 +209,20 @@ const finalClues = [
       <h1 class="slide-title">{{ titles[id - 1] }}</h1>
 
       <main class="slide-body">
-        <!-- SLIDE 02: Mười năm vây hãm (clicks: 2) -->
+        <!-- SLIDE 02: Mười năm vây hãm (clicks: 1) -->
         <template v-if="id === 2">
           <div class="story-panel">
             <div class="ten-years-card enter-cascade">
+              <div class="siege-ornament" aria-hidden="true"><span>◆</span></div>
               <div class="big-stat">
                 <strong>10</strong>
                 <span>năm</span>
               </div>
-              <p class="era-meta">Khoảng 1184 TCN · Theo truyền thuyết</p>
+              <p class="era-meta">Khoảng 1184 TCN</p>
+              <div class="siege-year-marks" aria-hidden="true">
+                <span v-for="year in 10" :key="year"></span>
+              </div>
             </div>
-
-            <Reveal :step="s" :at="1">
-              <blockquote class="speech-card">
-                “Mười năm rồi… Ai đó làm ơn nâng cấp phòng thủ giùm cái!”
-              </blockquote>
-            </Reveal>
-
-            <Reveal :step="s" :at="2">
-              <p class="story-takeaway">
-                Mười năm: đủ lâu để mệt mỏi — và đủ lâu để nghĩ đến chuyện
-                <strong class="sweep-highlight">nâng cấp phòng thủ.</strong>
-              </p>
-            </Reveal>
           </div>
         </template>
 
@@ -323,7 +314,7 @@ const finalClues = [
           </Reveal>
         </template>
 
-        <!-- SLIDE 05: Những ngày yên bình (clicks: 2) -->
+        <!-- SLIDE 05: Những ngày yên bình (clicks: 1) -->
         <template v-if="id === 5">
           <div class="grid-2col s5-grid">
             <div class="ci-peace-card enter-cascade">
@@ -352,23 +343,30 @@ const finalClues = [
 
             <div class="s5-dialogue">
               <Reveal :step="s" :at="1">
-                <div class="dialogue-card cassandra">
-                  <span class="speaker-label">CASSANDRA</span>
-                  <blockquote>“Xanh thì xanh… nhưng chưa chắc đã an toàn đâu.”</blockquote>
+                <div class="chat-message cassandra-message">
+                  <div class="chat-avatar" aria-hidden="true">
+                    <TroyCharacters role="cassandra" portrait />
+                  </div>
+                  <div class="chat-content">
+                    <span class="speaker-label">Cassandra</span>
+                    <div class="dialogue-card cassandra">
+                      <blockquote>“Xanh thì xanh… nhưng chưa chắc đã an toàn đâu.”</blockquote>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
 
               <Reveal :step="s" :at="1" :delay="150">
-                <div class="dialogue-card guard">
-                  <span class="speaker-label">NGƯỜI GÁC CỔNG</span>
-                  <blockquote>“Lại Cassandra nữa à? Dashboard vẫn xanh mà!”</blockquote>
-                </div>
-              </Reveal>
-
-              <Reveal :step="s" :at="2">
-                <div class="s5-coda">
-                  <p class="myth-note">Cassandra: lời tiên tri luôn đúng, nhưng chẳng ai tin — theo truyền thuyết.</p>
-                  <p class="ironic-refrain">“Dashboard vẫn xanh mà.”</p>
+                <div class="chat-message guard-message">
+                  <div class="chat-avatar" aria-hidden="true">
+                    <TroyCharacters role="guard" portrait />
+                  </div>
+                  <div class="chat-content">
+                    <span class="speaker-label">Người gác cổng</span>
+                    <div class="dialogue-card guard">
+                      <blockquote>“Lại Cassandra nữa à? Dashboard vẫn xanh mà!”</blockquote>
+                    </div>
+                  </div>
                 </div>
               </Reveal>
             </div>
@@ -482,7 +480,6 @@ const finalClues = [
         <!-- SLIDE 08: Code do AI sinh: đầu tư vào đâu? (clicks: 2) -->
         <template v-if="id === 8">
           <div class="grid-2col s8-grid">
-            <div class="stack-col">
               <div class="surface-card point-card enter-cascade">
                 <div class="sheet-stack" aria-hidden="true">
                   <span></span><span></span><span>test_()</span>
@@ -495,28 +492,19 @@ const finalClues = [
 
               <div class="surface-card point-card accent-left enter-cascade" style="--delay: 90ms">
                 <div>
-                  <h2>Lỗi hay gặp: hiểu sai yêu cầu, sai ghép nối</h2>
+                  <h2>Hiểu sai yêu cầu, sai ghép nối</h2>
                   <p>Ưu tiên <strong>integration / contract test</strong>.<br />E2E cần <strong>“red team”</strong>: để kẻ tấn công thử.</p>
                 </div>
               </div>
-            </div>
-
-            <div class="stack-col">
-              <Reveal :step="s" :at="1">
-                <div class="poll-card">
-                  <span class="big-qmark">?</span>
-                  <h2>Code do AI viết,<br />bạn chọn hình nào?</h2>
-                </div>
-              </Reveal>
-
-              <Reveal :step="s" :at="1" :delay="130">
-                <blockquote class="quote-box">
-                  <strong>Laocoön:</strong> “Timeo Danaos et dona ferentes”<br />
-                  <span>Ta sợ người Hy Lạp, kể cả khi họ mang quà.</span>
-                </blockquote>
-              </Reveal>
-            </div>
           </div>
+
+          <Reveal :step="s" :at="1">
+            <blockquote class="s8-quote">
+              <p>“Timeo Danaos et dona ferentes”</p>
+              <p class="s8-quote-translation">Ta sợ người Hy Lạp, kể cả khi họ mang quà.</p>
+              <cite>— Laocoön</cite>
+            </blockquote>
+          </Reveal>
 
           <Reveal :step="s" :at="2">
             <div class="clue-banner">
@@ -1098,7 +1086,7 @@ const finalClues = [
           </Reveal>
         </template>
 
-        <!-- SLIDE 20: Vì sao tất cả đều xanh mà pháo đài vẫn thất thủ? (clicks: 1) -->
+        <!-- SLIDE 20: Vì sao tất cả đều xanh mà pháo đài vẫn thất thủ? (clicks: 0) -->
         <template v-if="id === 20">
           <div class="s20-clues">
             <div
@@ -1114,12 +1102,6 @@ const finalClues = [
               </div>
             </div>
           </div>
-
-          <Reveal :step="s" :at="1">
-            <div class="s20-closing">
-              <strong>CI vẫn xanh. Câu hỏi còn lại nằm ở quyết định mở cổng.</strong>
-            </div>
-          </Reveal>
         </template>
       </main>
     </template>

@@ -3,6 +3,7 @@ defineProps({
   role: { type: String, default: 'guard' }, // 'guard' | 'cassandra' | 'real-horse' | 'soldier'
   pose: { type: String, default: 'idle' },  // 'idle' | 'tired' | 'alert' | 'open-gate' | 'look-left' | 'warn'
   coat: { type: String, default: '#7c4d2b' },
+  portrait: { type: Boolean, default: false },
 })
 </script>
 
@@ -12,7 +13,7 @@ defineProps({
     v-if="role === 'guard' || role === 'soldier'"
     class="char-svg guard-char"
     :class="['pose-' + pose, { 'is-soldier': role === 'soldier' }]"
-    viewBox="0 0 172 274"
+    :viewBox="portrait ? '30 4 94 94' : '0 0 172 274'"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >
@@ -52,7 +53,7 @@ defineProps({
     v-else-if="role === 'cassandra'"
     class="char-svg cassandra-char"
     :class="'pose-' + pose"
-    viewBox="0 0 172 274"
+    :viewBox="portrait ? '37 8 94 94' : '0 0 172 274'"
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
   >

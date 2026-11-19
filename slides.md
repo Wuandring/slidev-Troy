@@ -51,7 +51,7 @@ B0: vào slide. B1, B2...: mỗi lần bấm. Chuỗi trong từng bước tự 
 ---
 title: "Mười năm vây hãm"
 layout: default
-clicks: 2
+clicks: 1
 ---
 
 <TroyDeck :id="2" :step="$clicks" />
@@ -126,7 +126,7 @@ B0: vào slide. B1, B2...: mỗi lần bấm. Chuỗi trong từng bước tự 
 ---
 title: "Những ngày yên bình"
 layout: default
-clicks: 2
+clicks: 1
 ---
 
 <TroyDeck :id="5" :step="$clicks" />
@@ -523,7 +523,7 @@ B0: vào slide. B1, B2...: mỗi lần bấm. Chuỗi trong từng bước tự 
 ---
 title: "Vì sao tất cả đều xanh mà pháo đài vẫn thất thủ?"
 layout: default
-clicks: 1
+clicks: 0
 ---
 
 <TroyDeck :id="20" :step="$clicks" />

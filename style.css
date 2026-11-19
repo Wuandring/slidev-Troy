@@ -686,34 +686,73 @@
 }
 
 .ten-years-card {
-  background: rgba(255, 253, 248, 0.92);
+  background: linear-gradient(145deg, rgba(255, 253, 248, 0.97), rgba(249, 238, 215, 0.95));
   border: 1px solid #d9c8a9;
-  border-radius: 14px;
-  padding: 18px 22px;
+  border-radius: 18px;
+  padding: 30px 36px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: inset 0 0 0 7px rgba(255, 253, 248, 0.6), 0 16px 36px rgba(93, 64, 28, 0.08);
+}
+
+.siege-ornament {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  color: var(--gold-deep);
+  font-size: 12px;
+}
+
+.siege-ornament::before,
+.siege-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #d9c8a9;
+}
+
+.siege-year-marks {
+  display: flex;
+  gap: 9px;
+  margin-top: 28px;
+}
+
+.siege-year-marks span {
+  flex: 1;
+  height: 6px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+
+.siege-year-marks span:nth-child(5n) {
+  background: var(--crimson);
 }
 
 .big-stat {
   display: flex;
   align-items: baseline;
-  gap: 12px;
+  gap: 18px;
 }
 
 .big-stat strong {
-  font-size: 72px;
+  font-size: 144px;
   font-weight: 800;
   line-height: 0.95;
   color: var(--crimson);
 }
 
 .big-stat span {
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 700;
   color: var(--espresso);
 }
 
 .era-meta {
-  margin-top: 8px !important;
-  font-size: 18px;
+  margin-top: 18px !important;
+  font-size: 22px;
   color: var(--muted);
 }
 
@@ -1189,55 +1228,93 @@
 .s5-dialogue {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
+  justify-content: center;
+  gap: 38px;
+  padding: 24px 0;
+}
+
+.chat-message {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding-right: 24px;
+}
+
+.chat-message.guard-message {
+  flex-direction: row-reverse;
+  padding-right: 0;
+  padding-left: 24px;
+}
+
+.chat-avatar {
+  position: relative;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #eadcc5;
+  border: 2px solid #fffdf9;
+  box-shadow: 0 3px 10px rgba(82, 59, 30, 0.1);
+}
+
+.s5-dialogue .chat-avatar > .char-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+}
+
+.guard-message .chat-avatar {
+  background: #deebdc;
+}
+
+.chat-content {
+  flex: 1;
+  min-width: 0;
 }
 
 .dialogue-card {
+  padding: 24px 26px;
+  min-height: 166px;
+  display: flex;
+  align-items: center;
+  border-radius: 26px;
+  box-shadow: 0 6px 18px rgba(82, 59, 30, 0.05);
+}
+
+.dialogue-card.cassandra {
+  border: 1px solid #e2d5c1;
+  border-bottom-left-radius: 6px;
   background: #fffdf9;
-  border: 1px solid #dccba9;
-  border-radius: 14px;
-  padding: 20px 24px;
 }
 
-.dialogue-card.cassandra { border-left: 5px solid var(--crimson); }
-.dialogue-card.guard { border-left: 5px solid var(--green); }
+.dialogue-card.guard {
+  border: 1px solid #c6ddc8;
+  border-bottom-right-radius: 6px;
+  background: #e3efdf;
+  box-shadow: 6px 6px 0 rgba(34, 122, 77, 0.08);
+}
 
-.speaker-label {
+.s5-dialogue .speaker-label {
   display: block;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
+  margin: 0 0 9px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
   color: var(--crimson);
-  margin-bottom: 8px;
 }
 
-.dialogue-card.guard .speaker-label { color: var(--green); }
+.guard-message .speaker-label {
+  margin-right: 14px;
+  text-align: right;
+  color: var(--green);
+}
 
 .deck-slide .dialogue-card blockquote {
-  font: 600 23px/1.38 var(--font-sans) !important;
+  font: 600 24px/1.48 var(--font-sans) !important;
   color: var(--espresso) !important;
 }
-
-.s5-coda {
-  padding: 16px 22px;
-  border-radius: 14px;
-  background: rgba(255, 253, 249, 0.8);
-  border: 1px solid #dfd1b8;
-}
-
-.myth-note {
-  font-size: 17px;
-  color: var(--muted);
-  margin-bottom: 6px !important;
-}
-
-.ironic-refrain {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--crimson);
-}
-
 /* =========================================================
    SLIDE 07: BA TẦNG TEST, BA MÔ HÌNH TƯ DUY
    ========================================================= */
@@ -1321,6 +1398,35 @@
    ========================================================= */
 .s8-grid {
   flex: 1;
+}
+
+.s8-grid .point-card {
+  padding: 30px;
+}
+
+.deck-slide blockquote.s8-quote {
+  padding: 18px 24px !important;
+  text-align: center;
+  color: var(--espresso) !important;
+}
+
+.s8-quote > p:first-child {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.s8-quote-translation {
+  margin-top: 7px !important;
+  font-size: 19px;
+  color: var(--muted);
+}
+
+.s8-quote cite {
+  display: block;
+  margin-top: 8px;
+  color: var(--gold-deep);
+  font-size: 16px;
+  font-style: normal;
 }
 
 .point-card {
@@ -2540,21 +2646,21 @@
    ========================================================= */
 .s20-clues {
   flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  gap: 18px;
 }
 
 .recap-card {
   display: grid;
-  grid-template-columns: 56px 1fr;
+  grid-template-columns: 64px 1fr;
   align-items: center;
-  gap: 18px;
-  padding: 15px 24px;
-  border-radius: 14px;
+  gap: 24px;
+  padding: 20px 28px;
+  border-radius: 16px;
   background: #fff;
   border: 1px solid var(--surface-border);
+  box-shadow: 0 6px 18px rgba(82, 59, 30, 0.04);
   opacity: 0.14;
   transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -2570,32 +2676,27 @@
 }
 
 .recap-num {
-  font: 800 28px/1 var(--font-mono);
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: #f7ede2;
+  border: 1px solid #ead8c3;
+  font: 800 32px/1 var(--font-mono);
   color: var(--rust);
 }
 
 .recap-body h2 {
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 3px !important;
+  margin-bottom: 6px !important;
 }
 
 .recap-body p {
   font-size: 18.5px;
   color: var(--muted);
-}
-
-.s20-closing {
-  padding: 14px 24px;
-  border-radius: 12px;
-  background: #e6f4ec;
-  border: 1px solid #a8dbb9;
-  font-size: 20px;
-}
-
-.s20-closing strong {
-  color: #155232 !important;
 }
 
 /* =========================================================
