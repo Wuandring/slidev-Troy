@@ -11,6 +11,19 @@ npm.cmd run dev
 
 Mở địa chỉ mà terminal hiển thị. Dùng phím phải / Space để chạy từng nhịp; phím trái để lùi. Nhấn P để mở chế độ thuyết trình và đọc ghi chú. Nhấn G để tìm slide theo tên.
 
+## Điều khiển bằng điện thoại qua QR
+
+1. Mở bản trình chiếu trên máy tính (local hoặc GitHub Pages).
+2. Di chuột xuống góc trái dưới để mở thanh điều hướng, rồi bấm **QR**.
+3. Dùng camera điện thoại quét mã QR và mở liên kết.
+4. Điện thoại hiện hai nút **Lùi** và **Tới**. Mỗi lần bấm chạy một nhịp animation; hết nhịp sẽ chuyển slide.
+
+Hai thiết bị cần Internet. Kết nối dùng PeerJS Cloud để ghép đôi rồi truyền lệnh qua WebRTC, không cần tài khoản. Mỗi phiên chỉ nhận một điện thoại. Đóng hộp QR vẫn giữ kết nối; bấm **Kết thúc điều khiển** để thu hồi mã. Tải lại máy tính sẽ cần quét mã mới.
+
+Nếu kết nối thất bại, kiểm tra Internet rồi thử lại hoặc đổi Wi-Fi: một số mạng chặn kết nối WebRTC trực tiếp. Dự án chưa cấu hình TURN relay cho các mạng này.
+
+Kiểm tra logic ghép đôi: `node --test tests/phone-remote.test.mjs`.
+
 ## Nội dung và chuyển động
 
 - `slides.md`: thứ tự, số nhịp bấm và toàn bộ ghi chú từ PowerPoint.

@@ -38,7 +38,7 @@ const titles = [
   'Thuật sĩ viết 200 bài kiểm tra trong một phút. Ai kiểm tra thuật sĩ?',
   'Mutation testing = cài gián điệp giả',
   'Bức tường được chứng minh theo bản vẽ',
-  'Người – AI – Công cụ',
+  'Người, AI và công cụ',
   'Vì sao tất cả đều xanh mà pháo đài vẫn thất thủ?',
   'Khi nào cánh cổng nên mở?',
 ]
@@ -377,7 +377,7 @@ const finalClues = [
         <template v-if="id === 6">
           <div class="story-panel dark-glass-panel">
             <p class="fall-narrative enter-cascade">
-              Quân Hy Lạp dường như đã rút. Trước cổng chỉ còn một con ngựa gỗ khổng lồ — lễ vật dâng nữ thần Athena, theo truyền thuyết.
+              Quân Hy Lạp dường như đã rút. Trước cổng chỉ còn một con ngựa gỗ khổng lồ, được xem là lễ vật dâng nữ thần Athena theo truyền thuyết.
             </p>
 
             <Reveal :step="s" :at="1">
@@ -798,7 +798,7 @@ const finalClues = [
             <div class="stack-col">
               <div class="surface-card limit-card enter-cascade">
                 <h2>Property tốt đến từ ý nghĩa bài toán</h2>
-                <p>Chất lượng property quyết định tất cả — nếu property yếu, test vượt qua một cách vô nghĩa.</p>
+                <p>Chất lượng property quyết định tất cả. Nếu property yếu, test vượt qua một cách vô nghĩa.</p>
               </div>
 
               <Reveal :step="s" :at="2">
@@ -810,7 +810,7 @@ const finalClues = [
 
               <Reveal :step="s" :at="2" :delay="110">
                 <div class="surface-card limit-card">
-                  <h2>AI đề xuất — người thẩm định</h2>
+                  <h2>AI đề xuất, con người thẩm định</h2>
                   <p>Cần người duyệt xem property có phản ánh đúng <strong>ý định ban đầu</strong> không.</p>
                 </div>
               </Reveal>
@@ -832,7 +832,7 @@ const finalClues = [
 
               <Reveal :step="s" :at="1">
                 <div class="surface-card mini-callout">
-                  Mảng rỗng vẫn tăng dần — cần thêm ràng buộc như <strong>bảo toàn phần tử</strong>.
+                  Mảng rỗng vẫn tăng dần, nên cần thêm ràng buộc như <strong>bảo toàn phần tử</strong>.
                 </div>
               </Reveal>
             </div>
@@ -1018,14 +1018,14 @@ const finalClues = [
             <div class="clue-banner">
               <span class="clue-num">04</span>
               <div class="clue-text">
-                <strong>Manh mối 4 — Sai tiêu chí mở cổng</strong>
+                <strong>Manh mối 4: Sai tiêu chí mở cổng</strong>
                 <p>Hệ thống thấy vật trông giống ngựa và cho qua, thay vì ngựa thật.</p>
               </div>
             </div>
           </Reveal>
         </template>
 
-        <!-- SLIDE 19: Người – AI – Công cụ (clicks: 2) -->
+        <!-- SLIDE 19: Người, AI và công cụ (clicks: 2) -->
         <template v-if="id === 19">
           <div class="grid-2col s19-grid">
             <div class="wf-grid-2x2">

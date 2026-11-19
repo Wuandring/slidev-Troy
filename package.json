@@ -9,6 +9,8 @@
   },
   "devDependencies": {
     "@slidev/cli": "^51.1.2",
-    "@slidev/theme-default": "latest"
+    "@slidev/theme-default": "latest",
+    "peerjs": "^1.5.5",
+    "uqr": "^0.1.3"
   }
 }

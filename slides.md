@@ -494,7 +494,7 @@ B0: vào slide. B1, B2...: mỗi lần bấm. Chuỗi trong từng bước tự 
 -->
 
 ---
-title: "Người – AI – Công cụ"
+title: "Người, AI và công cụ"
 layout: default
 clicks: 2
 ---
