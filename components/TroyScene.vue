@@ -12,7 +12,7 @@ const s = computed(() => props.step || 0)
 const base = import.meta.env.BASE_URL
 
 // Slide 1 (intro): s=0 hero, s=1 CI + peeking horse
-// Slide 2 (siege): s=0 day-night pass, s=1 tired guard
+// Slide 2 (siege): s=0 rewind cue, s=1 tired guard
 // Slide 6 (fall):  s=0 horse arrives, s=1 scan + 5 features, s=2 gate opens & horse enters, s=3 night + hatch + soldiers jump & grow, s=4 question
 // Slide 12 (oracle): s=0 closed horse, s=1 X-ray cutaway + magnifying glass zoom on 3 soldiers, s=2 Clue 2
 // Slide 21 (closing): s=0 gate + question, s=1 Thank you
@@ -68,6 +68,11 @@ const features = ['4 chân', 'Thân lớn', 'Cao', 'Bờm', 'Móng']
       <img class="city-art" :src="base + 'troy/city.png'" alt="Cổng thành Troy" />
       <div class="siege-glow" :class="{ active: nightMode }"></div>
       <div class="left-scrim"></div>
+      <template v-if="mode === 'siege' && s === 0">
+        <div class="rewind-badge" role="status" aria-label="Tua ngược thời gian">
+          <span class="rewind-arrows" aria-hidden="true">◀◀</span>
+        </div>
+      </template>
 
       <!-- Double wooden gate doors -->
       <div class="gate-doors" aria-hidden="true">
@@ -247,6 +252,34 @@ const features = ['4 chân', 'Thân lớn', 'Cao', 'Bờm', 'Móng']
 
 .mode-siege[data-step="0"] .city-art {
   animation: siege-day-night 1.5s ease-in-out both;
+}
+
+.rewind-badge {
+  position: absolute;
+  top: 49%;
+  left: 74.55%;
+  transform: translate(-50%, -50%);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 76px;
+  height: 76px;
+  border: 1px solid rgba(224, 178, 84, 0.7);
+  border-radius: 4px;
+  background: rgba(35, 27, 20, 0.9);
+  color: #f3d18b;
+  font: 700 30px/1 var(--font-sans);
+  letter-spacing: -5px;
+  padding-right: 5px;
+  box-shadow: 0 8px 24px rgba(35, 27, 20, 0.18);
+  opacity: 0;
+  animation: rewind-cue 1.5s ease both;
+}
+
+.rewind-arrows {
+  display: inline-block;
+  animation: rewind-arrows 0.5s ease-in-out 3;
 }
 
 .siege-glow {
@@ -792,6 +825,17 @@ const features = ['4 chân', 'Thân lớn', 'Cao', 'Bờm', 'Móng']
   84% { filter: brightness(0.7); }
 }
 
+@keyframes rewind-cue {
+  0% { opacity: 0; }
+  12%, 78% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes rewind-arrows {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
+}
+
 @keyframes sweep-x {
   from { transform: translate3d(0, 0, 0); opacity: 0.9; }
   to { transform: translate3d(188px, 0, 0); opacity: 0; }
@@ -803,6 +847,15 @@ const features = ['4 chân', 'Thân lớn', 'Cao', 'Bờm', 'Móng']
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .rewind-badge {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .rewind-arrows {
+    animation: none !important;
+  }
+
   .city-art,
   .city-mask-right,
   .siege-glow,
